@@ -1,8 +1,7 @@
 <?php
 include __DIR__ . "/../config/conn.php";
-
 // ✅ DEFINE YOUR DATABASE NAME
-$dbName = "eccom_air9_main";
+$dbName = db_name;
 
 $path = __DIR__ . '/../config/eccom_air9_main.sql';
 
