@@ -1,0 +1,14 @@
+php -S 0.0.0.0:3000
+
+
+git init
+git add .
+git commit -m "v1"
+git remote add origin https://github.com/frontendplux/ecomms-V-0.1.git
+git branch -M main
+git push -u origin main
+
+
+git add .
+git commit -m "v1"
+git push origin main

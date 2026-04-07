@@ -1,0 +1,149 @@
+fetch('/api/endpoint.php', {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer my-secret-key',
+        'Content-Type': 'application/json'
+    }
+});
+
+
+
+<?php
+$headers = getallheaders();
+
+$auth = $headers['Authorization'] ?? '';
+
+if ($auth !== 'Bearer my-secret-key') {
+    http_response_code(401);
+    echo json_encode([
+        "status" => false,
+        "message" => "Unauthorized"
+    ]);
+    exit;
+}
+
+
+
+
+<?php
+$allowed_origin = "http://yourfrontend.com";
+
+if ($_SERVER['HTTP_ORIGIN'] !== $allowed_origin) {
+    exit("Blocked");
+}
+
+
+
+
+
+<?php
+$allowed_origins = [
+    "capacitor://localhost",
+    "http://localhost"
+];
+
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_origins)) {
+    header("Access-Control-Allow-Origin: " . $_SERVER['HTTP_ORIGIN']);
+}
+
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+// Handle preflight
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
+
+
+header("Access-Control-Allow-Origin: capacitor://localhost");
+header("Access-Control-Allow-Credentials: true");
+
+
+
+fetch(url, {
+    credentials: "include"
+});
+
+
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+
+if (str_starts_with($origin, 'capacitor://')) {
+    header("Access-Control-Allow-Origin: $origin");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+
+
+
+{
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}
+
+
+
+
+<fb:login-button 
+  config_id="{config_id}"
+  onlogin="checkLoginState();">
+</fb:login-button>
+
+
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
