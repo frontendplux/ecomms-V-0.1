@@ -157,7 +157,7 @@ export async function Home() {
             },
          body: JSON.stringify({action:"home", user:localStorage.getItem('user_id')})
         }).then(res => res.text());
-        console.log(req);
+        alert(req);
         const res=JSON.parse(req);
   console.log(res);
     return /*html*/`
