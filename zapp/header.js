@@ -1,6 +1,6 @@
 export const company={
     name: "Air9",
-    server_url:"/api/main/"
+    server_url:"/api/main/index.php"
 }
 
 
