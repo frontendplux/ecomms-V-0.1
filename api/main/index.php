@@ -2,11 +2,6 @@
 // Allow all domains
 header("Access-Control-Allow-Origin: *");
 
-// Allow specific HTTP methods
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-
-// Allow headers (important for fetch & JSON)
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
 $headers = getallheaders();
 $token = $headers['Authorization'] ?? '';
 

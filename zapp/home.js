@@ -157,8 +157,8 @@ export async function Home() {
             },
          body: JSON.stringify({action:"home", user:localStorage.getItem('user_id')})
         }).then(res => res.text());
-        alert(req);
-        const res=JSON.parse(req);
+        console.log(req);
+        const res=JSON.parse(req) ?? [];
   console.log(res);
     return /*html*/`
     <div class="bg-light">
